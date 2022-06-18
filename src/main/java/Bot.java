@@ -6,6 +6,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMar
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiValidationException;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -49,6 +50,13 @@ public class Bot extends TelegramLongPollingBot {
             //Добавляем в наше сообщение id чата а также наш ответ
             outMess.setChatId(chatId);
             outMess.setText(response);
+            ReplyKeyboard replyKeyboardMarkup = new ReplyKeyboard() {
+                @Override
+                public void validate() throws TelegramApiValidationException {
+
+                }
+            };
+            outMess.setReplyMarkup(replyKeyboardMarkup);
 
 
             //Отправка в чат
@@ -65,7 +73,7 @@ public class Bot extends TelegramLongPollingBot {
         //Сравниваем текст пользователя с нашими комнадами, на основе этого формируем ответ
         if(textMsg.equals("/start"))
             response = "Приветствую, бот знает много цитат. Жми /get, чтобы получить случайную из них";
-        if(textMsg.equals("/get"))
+        else if(textMsg.equals("/get") || textMsg.equals("Просвяти"))
             response = storage.getRandQuote();
         else
             response = "Сообщение не распознано";
