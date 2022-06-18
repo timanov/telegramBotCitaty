@@ -1,6 +1,5 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
@@ -11,7 +10,7 @@ public class Storage {
 
     Storage() {
         quoteList = new ArrayList<>();
-        parser("https://citatnica.ru/citaty/mudrye-tsitaty-velikih-lyudej");
+        parser("https://citatnica.ru/citaty/tsitaty-pro-ponimanie-v-otnosheniyah-200-tsitat");
     }
 
     String getRandQuote() {
