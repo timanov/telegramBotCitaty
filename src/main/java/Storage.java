@@ -10,7 +10,7 @@ public class Storage {
 
     Storage() {
         quoteList = new ArrayList<>();
-        parser("https://citatko.com/temy/lyubov/tsitaty-pro-lyubov-k-devushke?");
+        parser("https://bbf.ru/quotes/?author=32209&");
     }
 
     String getRandQuote() {
@@ -21,7 +21,7 @@ public class Storage {
     }
 
     void parser(String strURL) {
-        String className = "ads-color-box";
+        String className = "sentence__body";
         Document doc = null;
         try {
             //Получаем документ нужной нам страницы
