@@ -50,14 +50,8 @@ public class Bot extends TelegramLongPollingBot {
             //Добавляем в наше сообщение id чата а также наш ответ
             outMess.setChatId(chatId);
             outMess.setText(response);
-            ReplyKeyboard replyKeyboardMarkup = new ReplyKeyboard() {
-                @Override
-                public void validate() throws TelegramApiValidationException {
-
-                }
-            };
-            outMess.setReplyMarkup(replyKeyboardMarkup);
-
+//            ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
+//            outMess.setReplyMarkup(replyKeyboardMarkup);
 
             //Отправка в чат
             try {
