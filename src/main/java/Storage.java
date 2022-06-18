@@ -10,7 +10,7 @@ public class Storage {
 
     Storage() {
         quoteList = new ArrayList<>();
-        parser("https://citatnica.ru/citaty/tsitaty-pro-ponimanie-v-otnosheniyah-200-tsitat");
+        parser("https://citatko.com/temy/lyubov/tsitaty-pro-lyubov-k-devushke?");
     }
 
     String getRandQuote() {
@@ -21,7 +21,7 @@ public class Storage {
     }
 
     void parser(String strURL) {
-        String className = "su-note-inner su-u-clearfix su-u-trim";
+        String className = "ads-color-box";
         Document doc = null;
         try {
             //Получаем документ нужной нам страницы
